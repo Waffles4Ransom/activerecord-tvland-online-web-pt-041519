@@ -6,8 +6,9 @@ class Actor < ActiveRecord::Base
     "#{self.first_name} #{self.last_name}"
   end 
   
-  def list_roles 
+  def list_roles #should return "Khaleesi - Game of Thrones"
     self.characters.collect do |c|
-      
+      "#{c.name} - #{c.show.name}"
+    end 
   end 
 end
